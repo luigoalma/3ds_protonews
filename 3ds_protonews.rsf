@@ -19,9 +19,9 @@ Option:
 
 AccessControlInfo:
   IdealProcessor                : 1
-  AffinityMask                  : 2
+  AffinityMask                  : 0
 
-  Priority                      : -12
+  Priority                      : -9
 
   DisableDebug                  : true
   EnableForceDebug              : false
@@ -30,14 +30,16 @@ AccessControlInfo:
   CanUseNonAlphabetAndNumber    : false
   PermitMainFunctionArgument    : false
   CanShareDeviceMemory          : false
-  RunnableOnSleep               : true
+  RunnableOnSleep               : false
   SpecialMemoryArrange          : false
-  ResourceLimitCategory         : Other
+  ResourceLimitCategory         : 0
 
   CoreVersion                   : 2
-  DescVersion                   : 2
+  DescVersion                   : 0
 
   MemoryType                    : Base      # Application / System / Base
+  SystemMode                    : 64MB
+  SystemModeExt                 : 178MB # because..? it's prototype firmware, its odd
   HandleTableSize: 0
 
   MemoryMapping:
