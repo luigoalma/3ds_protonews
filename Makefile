@@ -120,7 +120,11 @@ DEPENDS	:=	$(OFILES:.o=.d)
 #---------------------------------------------------------------------------------
 # main targets
 #---------------------------------------------------------------------------------
-all	:	$(OUTPUT).cxi
+all	:	$(OUTPUT).cxi $(OUTPUT).cci
+
+$(OUTPUT).cci	:	$(OUTPUT).elf $(OUTPUT).rsf
+	@makerom -f cci -target d -rsf $(word 2,$^) -o $@ -elf $< -alignwr -ver	0
+	@echo built ... $(notdir $@)
 
 $(OUTPUT).cxi	:	$(OUTPUT).elf $(OUTPUT).rsf
 	@makerom -f ncch -target d -rsf $(word 2,$^) -o $@ -elf $<
